@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: d02-frontend
+    command: serve -s build -l 3000
+    restart: unless-stopped
+    networks:
+      - d02-network
+
+  api:
+    build: ./api
+    container_name: d02-api
+    command: npm run start
+    restart: unless-stopped
+    networks: 
+      - d02-network
+    environment:
+      - PORT=3001
+      - HOST=vit496.ru
+      - MONGO_URL=mongodb://api_db:27017/api
+    # ports:
+    #   - "3001:3001"
+    # expose:
+    #   - "3001"
+    depends_on:
+      - api_db
+
+  api_db:
+    image: mongo:latest
+    container_name: d02-api-db
+    restart: unless-stopped
+    networks:
+      - d02-network
+    volumes:
+      - mongodb_api:/data/db
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: d02-nginx
+    ports:
+      - "80:80"
+    networks:
+      - d02-network
+    volumes:
+      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - frontend
+      - api
+
+volumes:
+  mongodb_api:
+
+networks:
+  d02-network: 
+    driver: bridge
