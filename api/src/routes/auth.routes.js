@@ -2,7 +2,7 @@ const {Router} = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const {jwtsec} = require('./configuration')
+const {jwtsec} = require('../configuration')
 const User = require('../models/user')
 
 const router = Router()
