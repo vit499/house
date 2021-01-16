@@ -8,6 +8,9 @@ import Home from 'pages/home'
 import Login from 'pages/login'
 import Register from 'pages/register'
 import Articles from 'pages/articles'
+import Mathematic from 'pages/mathematic'
+import Task from 'pages/task'
+import MathResult from 'pages/mathResult'
 import {UserContext} from 'contexts/user'
 
 const Routes = () => {
@@ -37,6 +40,18 @@ const Routes = () => {
   else {
     return (
       <Switch>
+        <Route path="/" exact >
+          <Home />
+        </Route>
+        <Route path="/mathinfo" >
+          <Mathematic />
+        </Route>
+        <Route path="/task" >
+          <Task />
+        </Route>
+        <Route path="/mathresult" >
+          <MathResult />
+        </Route>
         <Route path="/login" >
           <Login />
         </Route>

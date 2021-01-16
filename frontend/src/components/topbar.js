@@ -20,7 +20,7 @@ const TopBar = () => {
   }, [])
 
   return (
-    <nav className="navbar navbar-light navbar-expand-sm" style={{backgroundColor: '#f3f3f3'}}>
+    <nav className="navbar navbar-light navbar-expand-sm" style={{backgroundColor: '#64ffda'}}>
       <div className="container">
         <Link to="/" className="navbar-brand">
           Home
@@ -36,11 +36,6 @@ const TopBar = () => {
               <li className="nav-item">
                 <NavLink to="/login" className="nav-link">
                   Войти
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/register" className="nav-link">
-                  Регистрация
                 </NavLink>
               </li>
             </Fragment>

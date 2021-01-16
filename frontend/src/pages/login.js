@@ -38,8 +38,6 @@ const Login = () => {
   }
   return (
     <div className="container page">
-      <h3 className="text-center mt-3">Вот вы говорили, я ничего не умею делать</h3>
-      <hr />
       <div className="row ">
         <div className="col-md-4 offset-md-4 col-xs-12" style={divStyle}>
           <h3 className="text-center">Вход</h3>
@@ -72,11 +70,6 @@ const Login = () => {
               >Войти</button>
             </form>
           </div>
-          <ul className="nav mt-2">
-            <li className="nav-item col text-center">
-              <Link to="/register">Регистрация</Link>
-            </li>
-          </ul>
           <div className="mt-3 text-muted text-center">Войти через соцсети</div>
           <div className="text-muted text-center">(соцсети-зло)</div>
         </div>

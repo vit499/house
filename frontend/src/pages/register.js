@@ -53,8 +53,6 @@ const Register = () => {
   }
   return (
     <div className="container page">
-      <h3 className="text-center mt-3">Вот вы говорили, я ничего не умею делать</h3>
-      <hr />
       <div className="row ">
         <div className="col-md-4 offset-md-4 col-xs-12" style={divStyle}>
           <h3 className="text-center">Регистрация</h3>
