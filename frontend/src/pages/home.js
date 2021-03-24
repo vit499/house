@@ -14,7 +14,7 @@ const Home = () => {
     <div className="container page">
       <div className="row ">
         <div className="col-md-4 offset-md-4 col-xs-12" style={divStyle}>
-          <h3 className="text-center">Паша Овсянников - бездельник и лентяй</h3>
+          <h3 className="text-center">xx</h3>
           <div>
             
           </div>
