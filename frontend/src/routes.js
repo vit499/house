@@ -1,33 +1,34 @@
-import React, {useContext} from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import React, { useContext } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import CreateArt from 'pages/createArt'
-import DetailPage from 'pages/detailPage'
-import LinkPage from 'pages/linkPage'
-import Home from 'pages/home'
-import Login from 'pages/login'
-import Register from 'pages/register'
-import Articles from 'pages/articles'
-import Mathematic from 'pages/mathematic'
-import Task from 'pages/task'
-import MathResult from 'pages/mathResult'
-import {UserContext} from 'contexts/user'
+import CreateArt from "pages/createArt";
+import DetailPage from "pages/detailPage";
+import LinkPage from "pages/linkPage";
+import Home from "pages/home";
+import Login from "pages/login";
+import Register from "pages/register";
+import Articles from "pages/articles";
+import Mathematic from "pages/mathematic";
+import Task from "pages/task";
+import MathResult from "pages/mathResult";
+import Geom from "components/geom/geom";
+import { UserContext } from "contexts/user";
 
 const Routes = () => {
-  const [token] = useContext(UserContext)
+  const [token] = useContext(UserContext);
 
-  const isAuth = !!token
-  console.log('routes, isAuth:', isAuth);
-  if(isAuth) {
+  const isAuth = !!token;
+  console.log("routes, isAuth:", isAuth);
+  if (isAuth) {
     return (
       <Switch>
-        <Route path="/" exact >
+        <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/getall" >
-          <Articles />
+        <Route path="/geom">
+          <Geom />
         </Route>
-        <Route path="/detail/:id" >
+        <Route path="/detail/:id">
           <DetailPage />
         </Route>
         <Route path="/create">
@@ -35,35 +36,32 @@ const Routes = () => {
         </Route>
         <Redirect to="/" />
       </Switch>
-    )
-  }
-  else {
+    );
+  } else {
     return (
       <Switch>
-        <Route path="/" exact >
+        <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/mathinfo" >
+        <Route path="/mathinfo">
           <Mathematic />
         </Route>
-        <Route path="/task" >
+        <Route path="/task">
           <Task />
         </Route>
-        <Route path="/mathresult" >
+        <Route path="/mathresult">
           <MathResult />
         </Route>
-        <Route path="/login" >
+        <Route path="/login">
           <Login />
         </Route>
-        <Route path="/register" >
+        <Route path="/register">
           <Register />
         </Route>
         <Redirect to="/login" />
       </Switch>
-    )
+    );
   }
-}
+};
 
-export default Routes
-
-
+export default Routes;

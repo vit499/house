@@ -28,47 +28,33 @@ const TopBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link>
+              <Nav.Link as={Link} to="/">
                 {" "}
-                <Link to="/" className="nav-link" exact>
-                  Home
-                </Link>
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/geom">
+                Геометрия
               </Nav.Link>
               {!isAuth && (
                 <Fragment>
-                  <Nav.Link>
-                    {" "}
-                    <Link to="/login" className="nav-link">
-                      Войти
-                    </Link>
+                  <Nav.Link as={Link} to="/login">
+                    Войти
                   </Nav.Link>
-                  <Nav.Link>
-                    {" "}
-                    <Link to="/register" className="nav-link">
-                      Reg
-                    </Link>
+                  <Nav.Link as={Link} to="/register">
+                    Reg
                   </Nav.Link>
                 </Fragment>
               )}
               {isAuth && (
                 <Fragment>
-                  <Nav.Link>
-                    {" "}
-                    <Link to="/getall" className="nav-link">
-                      Все
-                    </Link>
+                  <Nav.Link as={Link} to="/getall">
+                    Все
                   </Nav.Link>
-                  <Nav.Link>
-                    {" "}
-                    <Link to="/create" className="nav-link">
-                      Добавить
-                    </Link>
+                  <Nav.Link as={Link} to="/create">
+                    Добавить
                   </Nav.Link>
-                  <Nav.Link>
-                    {" "}
-                    <Link to="/" onClick={logout} className="nav-link">
-                      Выйти
-                    </Link>
+                  <Nav.Link as={Link} to="/" onClick={logout}>
+                    Выйти
                   </Nav.Link>
                 </Fragment>
               )}
