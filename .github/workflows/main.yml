@@ -19,7 +19,8 @@ jobs:
           sudo chmod 600 ../id_rsa
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           echo ssh known hosts has been copied?
-          ssh vit@92.63.192.137 'cd work/house && ls -l'
+          ls -lR
+          #ssh vit@92.63.192.137 'cd work/house && ls -l'
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
