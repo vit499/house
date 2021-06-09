@@ -15,12 +15,13 @@ jobs:
       - name: Create SSH key
         run: |
           mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ../id_rsa
+          cat "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa
           sudo chmod 600 ../id_rsa
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           echo ssh known hosts has been copied?
           cd ~/.ssh/
-          ls -lR
+          ls -la
+          echo ~/.ssh/known_hosts
           #ssh vit@92.63.192.137 'cd work/house && ls -l'
         shell: bash
         env:
