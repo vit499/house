@@ -3,8 +3,6 @@ name: CI
 
 on:
   push:
-    branches: 
-      - master
     tags:
       - "*"
 
@@ -25,11 +23,14 @@ jobs:
           # cd ~/.ssh/
           # ls -la
           # echo ~/.ssh/known_hosts
-          # ssh vit@92.63.192.137 'cd work/house && ls -l && git pull && docker-compose up --build -d'
+          # ssh "$HOST_USER"@"$HOST_IP" 'cd work/house && ls -l && git pull && docker-compose up --build -d'
+          echo "$HOST_USER"@"$HOST_IP"
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+          HOST_IP: ${{secret.HOST_IP}}
+          HOST_USER: ${{secret.HOST_USER}}
 
       - name: Run a one-line script
         run: echo Hello, world!
