@@ -22,7 +22,7 @@ jobs:
           # cd ~/.ssh/
           # ls -la
           # echo ~/.ssh/known_hosts
-          ssh vit@92.63.192.137 'cd work/house && ls -l'
+          ssh vit@92.63.192.137 'cd work/house && ls -l && git pull && docker-compose up --build -d'
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
