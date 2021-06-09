@@ -59,6 +59,8 @@ const Geom = () => {
       <br />
       <span>угол A = {angA} град.</span>
       <br />
+      <span>Скажи, чему равен угол AKC ?</span>
+      <br />
 
       <Row className="mt-2">
         <Col>

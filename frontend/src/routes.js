@@ -43,6 +43,9 @@ const Routes = () => {
         <Route path="/" exact>
           <Home />
         </Route>
+        <Route path="/geom">
+          <Geom />
+        </Route>
         <Route path="/mathinfo">
           <Mathematic />
         </Route>
