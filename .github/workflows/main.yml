@@ -32,8 +32,8 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
-          HOST_IP: ${{secret.HOST_IP}}
-          HOST_USER: ${{secret.HOST_USER}}
+          HOST_IP: ${{secrets.HOST_IP}}
+          HOST_USER: ${{secrets.HOST_USER}}
 
       - name: Run a one-line script
         run: echo Hello, world!
